@@ -18,15 +18,15 @@ app.post("/insert", async(req, res) => {
     res.status(404).json({ message: err.message });
   }
 });
-app.get("/get-data", async(req, res) => {
-    try{
-    const data= await userDetails.find({});
-    res.status(200).send(data);
-    } catch (err) {
-        res.status(404).json({ message: err.message });
-    }
+// app.get("/get-data", async(req, res) => {
+//     try{
+//     const data= await userDetails.find({});
+//     res.status(200).send(data);
+//     } catch (err) {
+//         res.status(404).json({ message: err.message });
+//     }
     
-})
+// })
 app.delete("/get-delete/:id", async(req, res) => {
     try{
     const data= await userDetails.findByIdAndDelete(req.params.id);
@@ -37,6 +37,6 @@ app.delete("/get-delete/:id", async(req, res) => {
     
 })
 
-app.listen(3006, () => {
+app.listen(3000, () => {
   console.log("Run on port 3000");
 });
